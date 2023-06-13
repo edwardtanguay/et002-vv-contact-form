@@ -52,13 +52,7 @@ export const attachPageWelcomeEvents = () => {
 		};
 
 		(async () => {
-			const response = await axios.post(`${apiUrl}/contacts`, formData,
-				{
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				}
-			);
+			const response = await axios.post(`${apiUrl}/contacts`, formData);
 			console.log(response);
 		})();
 	});
