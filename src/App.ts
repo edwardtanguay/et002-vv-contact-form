@@ -1,5 +1,5 @@
 import './styles/main.scss';
-import { getMenu, getCurrentPage } from './Router';
+import { getMenu, getCurrentPage, attachEvents } from './Router';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 <header>
@@ -11,19 +11,4 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 </main>
 `;
 
-// attach events
-(() => {
-	const btn = document.querySelector('.btnContactForm');
-	btn?.addEventListener('click', (e:Event) => {
-		e.preventDefault();
-		const fullName = document.querySelector<HTMLInputElement>('.contactForm #fullName')?.value; 
-		const email = document.querySelector<HTMLInputElement>('.contactForm #email')?.value; 
-		const age = document.querySelector<HTMLInputElement>('.contactForm #age')?.value; 
-		const formData = {
-			fullName,
-			email,
-			age
-		}
-		console.log(formData);
-	});
-})();
+attachEvents();

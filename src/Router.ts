@@ -1,5 +1,5 @@
 import * as tools from './tools';
-import { PageWelcome } from './pages/PageWelcome';
+import { PageWelcome, attachPageWelcomeEvents } from './pages/PageWelcome';
 import { PageInfo } from './pages/PageInfo';
 import { PageAbout } from './pages/PageAbout';
 import { Page404 } from './pages/Page404';
@@ -46,6 +46,9 @@ export const getMenu = () => {
 `;
 }
 
+export const attachEvents = () => {
+	attachPageWelcomeEvents();
+}
 
 function getSmartCurrentPageId() {
 	let currentPageIdCode = tools.getCurrentPageIdCode();

@@ -34,3 +34,19 @@ export const PageWelcome = () => {
 </div>
 `;
 }
+
+export const attachPageWelcomeEvents = () => {
+	const btn = document.querySelector('.btnContactForm');
+	btn?.addEventListener('click', (e:Event) => {
+		e.preventDefault();
+		const fullName = document.querySelector<HTMLInputElement>('.contactForm #fullName')?.value; 
+		const email = document.querySelector<HTMLInputElement>('.contactForm #email')?.value; 
+		const age = document.querySelector<HTMLInputElement>('.contactForm #age')?.value; 
+		const formData = {
+			fullName,
+			email,
+			age
+		}
+		console.log(formData);
+	});
+}
