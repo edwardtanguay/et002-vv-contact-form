@@ -18,9 +18,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 		e.preventDefault();
 		const fullName = document.querySelector<HTMLInputElement>('.contactForm #fullName')?.value; 
 		const email = document.querySelector<HTMLInputElement>('.contactForm #email')?.value; 
+		const age = document.querySelector<HTMLInputElement>('.contactForm #age')?.value; 
 		const formData = {
 			fullName,
-			email
+			email,
+			age
 		}
 		console.log(formData);
 	});
