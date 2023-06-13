@@ -10,3 +10,18 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 	${getCurrentPage()}
 </main>
 `;
+
+// attach events
+(() => {
+	const btn = document.querySelector('.btnContactForm');
+	btn?.addEventListener('click', (e:Event) => {
+		// e.preventDefault();
+		const fullName = document.querySelector<HTMLInputElement>('.contactForm #fullName')?.value; 
+		const email = document.querySelector<HTMLInputElement>('.contactForm #email')?.value; 
+		const formData = {
+			fullName,
+			email
+		}
+		console.log(formData);
+	});
+})();
