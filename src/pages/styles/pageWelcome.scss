@@ -1,0 +1,78 @@
+.pageWelcome {
+	h1 {
+		margin-bottom: 2rem;
+	}
+
+
+	form {
+		fieldset {
+			padding: 2em;
+			border: solid 1px #aaa;
+			min-width: 300px;
+			border-radius: 6px;
+			background-color: #666;
+		}
+
+		legend {
+			padding: 0 .25em;
+			color: #ccc;
+			background-color: rgb(73, 68, 68);
+			border-radius: 5px;
+			padding: 5px 10px;
+			border: 1px solid #777;
+		}
+
+		.row {
+			margin-bottom: 1rem;
+
+			label {
+				display: block;
+				padding-top: .5em;
+				margin-bottom: .3rem;
+			}
+
+			input {
+				padding: .5em;
+				border: 1px solid #999;
+				width: 100%;
+			}
+
+		}
+
+		.buttonRow {
+			margin-top: 2rem;
+			text-align: right;
+
+			button {
+				padding: .5rem;
+			}
+		}
+	}
+
+	/* smartphone view */
+	@media (max-width: 577px) {
+		h1 {
+			font-size: 1.3rem;
+			text-align: center;
+		}
+
+		legend {
+			font-size: 1.2em;
+		}
+	}
+
+	/* computer/table view */
+	@media (min-width: 578px) {
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		legend {
+			font-size: 1.4em;
+		}
+
+		fieldset {
+			max-width: 40rem;
+		}
+	}
+}
