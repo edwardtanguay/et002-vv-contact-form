@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "run-p api frontend",
+    "dev": "run-p api frontend",
     "frontend": "vite",
+    "api": "json-server --watch ./src/data/db.json --port 5555",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "api": "json-server --watch ./src/data/db.json --port 5555"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",

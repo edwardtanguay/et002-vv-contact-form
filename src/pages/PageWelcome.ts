@@ -1,4 +1,5 @@
 import './styles/pageWelcome.scss';
+import axios from 'axios';
 
 export const PageWelcome = () => {
 	return /*html*/`
@@ -36,17 +37,29 @@ export const PageWelcome = () => {
 }
 
 export const attachPageWelcomeEvents = () => {
+	const apiUrl = 'http://localhost:5555';
+
 	const btn = document.querySelector('.btnContactForm');
-	btn?.addEventListener('click', (e:Event) => {
+	btn?.addEventListener('click', (e: Event) => {
 		e.preventDefault();
-		const fullName = document.querySelector<HTMLInputElement>('.contactForm #fullName')?.value; 
-		const email = document.querySelector<HTMLInputElement>('.contactForm #email')?.value; 
-		const age = document.querySelector<HTMLInputElement>('.contactForm #age')?.value; 
+		const fullName = document.querySelector<HTMLInputElement>('.contactForm #fullName')?.value;
+		const email = document.querySelector<HTMLInputElement>('.contactForm #email')?.value;
+		const age = document.querySelector<HTMLInputElement>('.contactForm #age')?.value;
 		const formData = {
 			fullName,
 			email,
 			age
-		}
-		console.log(formData);
+		};
+
+		(async () => {
+			const response = await axios.post(`${apiUrl}/contacts`, formData,
+				{
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}
+			);
+			console.log(response);
+		})();
 	});
 }
