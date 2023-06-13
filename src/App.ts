@@ -15,7 +15,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 (() => {
 	const btn = document.querySelector('.btnContactForm');
 	btn?.addEventListener('click', (e:Event) => {
-		// e.preventDefault();
+		e.preventDefault();
 		const fullName = document.querySelector<HTMLInputElement>('.contactForm #fullName')?.value; 
 		const email = document.querySelector<HTMLInputElement>('.contactForm #email')?.value; 
 		const formData = {
