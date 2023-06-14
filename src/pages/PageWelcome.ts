@@ -63,6 +63,8 @@ export const attachPageWelcomeEvents = () => {
 				console.log(response.status);
 			} else {
 				if(elemFullName) elemFullName.value = '';
+				if(elemEmail) elemEmail.value = '';
+				if(elemAge) elemAge.value = '';
 			}
 		})();
 	});
