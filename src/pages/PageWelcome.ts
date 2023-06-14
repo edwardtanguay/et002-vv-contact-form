@@ -42,9 +42,15 @@ export const attachPageWelcomeEvents = () => {
 	const btn = document.querySelector('.btnContactForm');
 	btn?.addEventListener('click', (e: Event) => {
 		e.preventDefault();
-		const fullName = document.querySelector<HTMLInputElement>('.contactForm #fullName')?.value;
-		const email = document.querySelector<HTMLInputElement>('.contactForm #email')?.value;
-		const age = document.querySelector<HTMLInputElement>('.contactForm #age')?.value;
+		
+		const elemFullName = document.querySelector<HTMLInputElement>('.contactForm #fullName');
+		const elemEmail = document.querySelector<HTMLInputElement>('.contactForm #email');
+		const elemAge = document.querySelector<HTMLInputElement>('.contactForm #age');
+
+		const fullName = elemFullName?.value;
+		const email = elemEmail?.value;
+		const age = elemAge?.value;
+
 		const formData = {
 			fullName,
 			email,
@@ -53,7 +59,11 @@ export const attachPageWelcomeEvents = () => {
 
 		(async () => {
 			const response = await axios.post(`${apiUrl}/contacts`, formData);
-			console.log(response);
+			if (response.status !== 201) {
+				console.log(response.status);
+			} else {
+				if(elemFullName) elemFullName.value = '';
+			}
 		})();
 	});
 }
